@@ -1,0 +1,10 @@
+.wrapper {
+  width: 20vw;
+  padding: 20px 0 26px 20px;
+  height: 100%;
+  position: fixed;
+  overflow-y: hidden;
+}
+.wrapper:hover {
+  overflow-y: scroll;
+}/*# sourceMappingURL=Sidebar.modules.css.map */

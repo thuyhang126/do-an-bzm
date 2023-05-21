@@ -1,0 +1,54 @@
+.wrapper {
+    width: 680px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: #e0fcfc;
+    padding: 30px 100px 50px;
+
+    h1 {
+        text-align: center;
+        color: #000 !important;
+        font-weight: 700 !important;
+        margin-bottom: 30px;
+        font-size: 32px;
+        border-bottom: 1px solid #312e2e;
+    }
+
+    input {
+        padding: 20px;
+    }
+
+    .submit {
+        display: block;
+        margin: 30px auto 50px !important;
+        padding: 10px !important;
+        width: 30% !important;
+        color: white !important;
+        background-color: #a52a2a;
+        font-size: 25px;
+        border-radius: 10px;
+    }
+
+    p {
+        color: red;
+    }
+
+    svg {
+        font-size: 30px;
+        color: #a52a2a;
+    }
+    .reactHookForm {
+        input {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+    }
+}

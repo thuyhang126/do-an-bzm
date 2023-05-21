@@ -1,0 +1,72 @@
+.sidebar_action {
+  max-width: 18vw;
+  padding-top: 90px;
+  position: fixed;
+  right: 2vw;
+  top: 0;
+}
+.sidebar_action .category ul li {
+  list-style-type: none;
+  font-size: 18px;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  background-color: aquamarine;
+  margin-bottom: 10px;
+  width: 180px;
+}
+.sidebar_action p {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.sidebar_action .list_user_online ul li {
+  list-style-type: none;
+  margin-bottom: 15px;
+  position: relative;
+  display: block;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+.sidebar_action .list_user_online ul li .account_item {
+  display: flex;
+  align-items: center;
+}
+.sidebar_action .list_user_online ul li .account_item .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid rgba(136, 136, 136, 0.5333333333);
+}
+.sidebar_action .list_user_online ul li span {
+  display: inline-block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: 30px;
+  bottom: 7px;
+}
+.sidebar_action .list_user_online ul li .online {
+  background-color: #31a24c;
+}
+.sidebar_action .list_user_online ul li .offline {
+  background-color: #e60d18;
+}
+.sidebar_action .list_user_online ul li:hover {
+  background-color: #f9f6f6;
+}
+
+.listMessage {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: auto;
+  right: 7%;
+}
+.listMessage li {
+  margin: 0 5px;
+  list-style: none;
+}/*# sourceMappingURL=SidebarAction.module.css.map */

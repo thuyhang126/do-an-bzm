@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+  </head>
+
+  <body>
+    <h1>chat</h1>
+
+    <ul id="messages"></ul>
+
+    <form id="chat-form">
+      <input type="text" id="chat-mes" />
+      <button id="send-chat">Gửi</button>
+    </form>
+
+    <button id="leave">Rời Phòng</button>
+    <button id="disconnect">Log out</button>
+    <button id="loading">load</button>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const token = JSON.parse(localStorage.getItem("token1"));
+    console.log(token);
+
+    const URL = 'http://localhost:8000';
+    const socket = io(URL, {
+      extraHeaders: {
+        authorization: 'Bearer ' + token,
+      },
+    });
+
+    const id = 4;
+    const receiver_id = 3;
+    const avatar = 'https://lh3.googleusercontent.com/a/AItbvmk_MOPSoNQ_w-xNqihM2ZId-kqeyvRN5o32h3ij=s96-c';
+    const name = 'thinh7'
+    // const sender_id = prompt('Tên id người gửi là gì?');
+    const chatForm = document.querySelector("#chat-form");
+    const chatMes = document.querySelector("#chat-mes");
+    const leave = document.querySelector("#leave");
+    const logOut = document.querySelector("#disconnect");
+    const load = document.querySelector("#loading");
+    let chatItem;
+
+    socket.emit("join_chat", { receiver_id: id });
+
+    let i = 1;
+
+    load.addEventListener("click", (e) => {
+      console.log(i);
+      socket.emit("list_message", {
+        receiver_id: id,
+        offset: i,
+      });
+    });
+
+    // socket.on('render-messages', listMessages => {
+    //     console.log(listMessages);
+    //     listMessages.forEach(message => {
+    //         chatItem = document.createElement('li');
+    //         chatItem.textContent = `${message.sender_id}: ${message.message}`;
+
+    //         messages.appendChild(chatItem);
+    //     })
+
+    //     return i = i + 1;
+    // })
+
+    chatForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const message = chatMes.value;
+      socket.emit("message", {
+        message: message,
+        sender: id,
+        receiver_id,
+        sender_name: name,
+        sender_avatar: avatar,
+      });
+      chatItem = document.createElement("li");
+      chatItem.textContent = `nguoiGui: ${message}`;
+
+      messages.appendChild(chatItem);
+      chatMes.value = "";
+    });
+
+    chatMes.addEventListener("focus", (e) => {
+      console.log("focus");
+      socket.emit("seen_messages", receiver_id);
+    });
+
+    const messages = document.querySelector("#messages");
+    socket.on("sent-message", (message) => {
+      console.log(message);
+      chatItem = document.createElement("li");
+      chatItem.textContent = `${message.sender_id}: ${message.message}`;
+
+      messages.appendChild(chatItem);
+    });
+
+    socket.on("update-seen-message", (listMessage) => {
+      console.log(listMessage);
+    });
+
+    logOut.addEventListener("click", (e) => {
+      socket.emit("user-disconnect");
+    });
+  </script>
+</html>

@@ -1,0 +1,83 @@
+.sidebar_action {
+  max-width: 18vw;
+  padding-top: 90px;
+  position: fixed;
+  right: 6vw;
+  top: 0;
+  .category {
+    ul {
+      li {
+        list-style-type: none;
+        font-size: 18px;
+        padding: 6px 20px;
+        border-radius: 20px;
+        font-weight: 500;
+        background-color: aquamarine;
+        margin-bottom: 10px;
+        width: 180px;
+      }
+    }
+  }
+  p {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .list_user_online {
+    ul {
+      li {
+        list-style-type: none;
+        margin-bottom: 15px;
+        position: relative;
+        display: block;
+        border-radius: 6px;
+        padding: 8px;
+        margin-bottom: 4px;
+        cursor: pointer;
+        .account_item {
+          display: flex;
+          align-items: center;
+          .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 1px solid #8888;
+          }
+        }
+        span {
+          display: inline-block;
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          left: 30px;
+          bottom: 7px;
+        }
+
+        .online {
+          background-color: #31a24c;
+        }
+
+        .offline {
+          background-color: #e60d18;
+        }
+      }
+      li:hover {
+        background-color: #f9f6f6;
+      }
+    }
+  }
+}
+
+.listMessage {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: auto;
+  right: 7%;
+
+  li {
+    margin: 0 5px;
+    list-style: none;
+  }
+}

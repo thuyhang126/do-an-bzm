@@ -1,0 +1,50 @@
+.form input {
+  font-size: 16px;
+}
+
+.form .list_item {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100% !important;
+}
+
+.item_detail {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.css-cyfsxc-MuiPickersCalendarHeader-labelContainer {
+  font-size: 18px !important;
+}
+
+.css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel {
+  font-size: 12px !important;
+}
+
+.css-1qs309j-MuiButtonBase-root-MuiPickersDay-root,
+.css-7oawqu-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected) {
+  font-size: 12px !important;
+}
+
+.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root,
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  font-size: 18px !important;
+}
+
+.save-info {
+  padding: 20px 32px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  background-color: #1676d2;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 16px;
+}
+
+.err {
+  color: red;
+  font-weight: bold;
+  margin-top: 0px;
+}
